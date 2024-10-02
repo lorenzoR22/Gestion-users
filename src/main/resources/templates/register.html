@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head >
+    <meta charset="UTF-8">
+    <title>Registrarse</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-lg">
+    <h1>Registrarse</h1>
+    <hr>
+    <form class="w-50" th:action="@{/registerForm}"  method="post" th:object="${nuevoUsuario}">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username" th:field="*{username}" class="form-control" required>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" th:field="*{password}" class="form-control" required>
+
+        <label for="email">Correo electronico:</label>
+        <input type="email" id="email" name="email" th:field="*{email}" class="form-control" required>
+        <br>
+        <select class="form-select" th:field="*{roles}" aria-label="Large select example" required>
+            <option value="" th:selected="*{roles} == null">Seleccione un rol</option>
+            <option value="USER">User</option>
+            <option value="ADMIN">Admin</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary col-2">Registrar</button>
+    </form>
+</div>
+</body>
+</html>
