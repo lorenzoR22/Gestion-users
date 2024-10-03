@@ -8,7 +8,7 @@
 <body class="container mt-5">
 <h1>Iniciar Sesion</h1>
 <hr>
-<form class="w-50" th:action="@{/login}" method="post" th:object="${loginUsuario}">
+<form class="w-50" th:action="@{/login}" method="post" th:object="${loginUsuario}" autocomplete="off">
     <div>
         <label for="username">Usuario:</label>
         <input type="text" id="username" th:field="*{username}" name="username" class="form-control" required>
