@@ -9,7 +9,7 @@
 <div class="container-lg">
     <h1>Actualizar usuario</h1>
     <hr>
-    <form class="w-50" th:action="@{/updateUser}" th:object="${update}" method="post">
+    <form class="w-50" th:action="@{/updateUser}" th:object="${update}" method="post" autocomplete="off">
         <input type="hidden" th:field="*{id}">
         <label for="username">Usuario:</label>
         <input type="text" id="username" name="username" th:field="*{username}" class="form-control" required>
